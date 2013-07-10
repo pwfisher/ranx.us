@@ -1,14 +1,21 @@
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 <script>
 
-// Login check
+if (!jQuery) { return; }
 
-// Request dynamic content
+// Path
+var path = window.location.pathname;
+if (path === '/') { path = 'home'; }
+
+// API Page Load
 $.ajax({
-	url: '/api/Page/get/url/' + encodeURIComponent(window.location.toString()),
-	success: function(o) {
-		var response = JSON.parse(o.body);
-		console.log(o, response);
+	url: '/api/Page/load/path/' + encodeURIComponent(path),
+	complete: function(o)
+	{
+		console.log('api page load request complete');
+	},
+	success: function(o)
+	{
+		$(document).trigger('api:page-load', [o]);
 	}
 });
 

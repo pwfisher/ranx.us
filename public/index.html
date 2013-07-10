@@ -9,5 +9,14 @@
 
 <h1>ranx.us</h1>
 
-</body>
-</html>
+<p class="data">api response
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script>
+$(document).on('api:page-load', function (e, o)
+{
+	console.log(e, o);
+	$('.data').append(JSON.stringify(o));
+
+});
+</script>

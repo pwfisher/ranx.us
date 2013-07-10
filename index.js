@@ -14,6 +14,7 @@ var
         'postscript': 'inc/postscript.html'
     },
     staticServer = new(static.Server)('./public', staticOptions),
+    apiParamsRegex = new RegExp('^/api/([^/]+)/([^/]+)/(.*)$'),
 
     /**
      * Request listener - execution begins here. Master controller logic.
@@ -25,21 +26,39 @@ var
     {
         request.addListener('end', function ()
         {
-            // Static File
+            // API request
             //
-            staticServer.serve(request, response, function (err, res)
+            var apiParams = apiParamsRegex.exec(request.url);
+            if (apiParams) {
+                /*
+                    [
+                        "/api/Page/load/path/home",
+                        "Page",
+                        "load",
+                        "path/home"
+                    ]
+                */
+                console.log('apiParams', apiParams);
+                response.end(JSON.stringify(apiParams));
+            }
+            else
             {
-                if (err)
+                // Static File
+                //
+                staticServer.serve(request, response, function (err, res)
                 {
-                    console.error('> Error serving ' + request.url + ' - ' + err.message);
-                    response.writeHead(err.status, err.headers);
-                    response.end();
-                }
-                else // success
-                {
-                    console.log('> ' + request.url + ' - ' + res.message);
-                }
-            });
+                    if (err)
+                    {
+                        console.error('> Error serving ' + request.url + ' - ' + err.message);
+                        response.writeHead(err.status, err.headers);
+                        response.end();
+                    }
+                    else // success
+                    {
+                        console.log('> ' + request.url + ' - ' + res.message);
+                    }
+                });
+            }
         });
     },
 
