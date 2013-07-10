@@ -1,0 +1,15 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script>
+
+// Login check
+
+// Request dynamic content
+$.ajax({
+	url: '/api/Page/get/url/' + encodeURIComponent(window.location.toString()),
+	success: function(o) {
+		var response = JSON.parse(o.body);
+		console.log(o, response);
+	}
+});
+
+</script>

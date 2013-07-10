@@ -1,0 +1,22 @@
+body {
+	background: black;
+	color: #DDD;
+}
+
+h1 {
+	font-size: 3em;
+	text-align: center;
+}
+
+p {
+	margin: 1.5em 0;
+}
+
+a {
+	color: rgb(20, 117, 214);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
