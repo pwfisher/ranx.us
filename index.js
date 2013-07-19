@@ -1,4 +1,3 @@
-/*global require, console, __dirname */
 var splice = require('./lib/splice/index.js'),
 
     spliceServer = new (splice.Server)({
