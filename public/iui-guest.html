@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ranx.us · welcome</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="/iui/iui.css">
+    <link rel="stylesheet" href="/iui/t/default/default-theme.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+
+    <script src="/iui/iui.js"></script>
+</head>
+<body>
+
+
+    <div class="toolbar">
+        <h1 id="pageTitle"></h1>
+        <a id="backButton" class="button" href="#"></a>
+        <a class="button" href="#home"><i class="icon-2x icon-home"></i></a>
+    </div>
+
+
+    <div class="panel" id="home" title="Home" selected="true">
+        <fieldset>
+        	<div class="row">
+        		<label>Email</label>
+	            <input type="text" name="email">
+            </div>
+        	<div class="row">
+        		<label>Password</label>
+	            <input type="password" name="password">
+            </div>
+        </fieldset>
+        <a class="redButton" href="javascript:void(0)">Login</a>
+        <br>
+        <hr>
+        <h3>New user?</h3>
+        <a class="whiteButton" href="#register">Sign up</a>
+    </div>
+
+
+    <div class="panel" id="register" title="Register">
+        <fieldset>
+            <div class="row">
+                <label>Name</label>
+                <input type="text" name="name" placeholder="display name">
+            </div>
+            <div class="row">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="new password">
+            </div>
+            <div class="row">
+                <label>Confirm</label>
+                <input type="password" name="confirm_password" placeholder="new password again">
+            </div>
+        </fieldset>
+    </div>
+
+
+</body>
+</html>
