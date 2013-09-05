@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "dependencies": {
     	"handlebars": "",
-        "node-staticp": "1.1.1"
+        "node-staticp": "1.1"
     },
     "engines" : { "node": ">= 0.4.1" }
 }
