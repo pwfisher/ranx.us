@@ -113,7 +113,7 @@ header.toolbar #backButton {
 /************************************************************************************************/
 body ul > li {
 	display:		inline-block;
-	float:			    left;
+	/*float:			    left;*/
 	width:			100%;
 }
 body ul > li,
