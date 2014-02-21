@@ -41,8 +41,8 @@
   <script type="text/x-handlebars" id="ladders">
 
     <ul>
-      {{#each}}
-      <li>{{this}}</li>
+      {{#each ladder in controller}}
+      <li>{{ladder.name}}</li>
       {{/each}}
     </ul>
 
