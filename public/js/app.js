@@ -17,7 +17,7 @@ App.Router.map(function() {
     this.route('create');
   });
   this.resource('ladders', function () {
-    this.resource('ladder', { path: '/:ladder_path'}, function () {
+    this.resource('ladder', { path: '/:path'}, function () {
       this.route('edit');
     });
     this.route('create');

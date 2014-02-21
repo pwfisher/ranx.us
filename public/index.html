@@ -46,16 +46,34 @@
 <script type="text/x-handlebars" id="ladders">
   <ul>
     {{#each ladder in controller}}
-    <li>{{ladder.name}}</li>
+    <li>{{#link-to 'ladder' ladder}}{{ladder.name}}{{/link-to}}</li>
     {{/each}}
+  </ul>
+
+  {{outlet}}
+</script>
+
+<script type="text/x-handlebars" id="ladder">
+  <ul>
+    <li>{{name}}</li>
+    <li>{{path}}</li>
   </ul>
 </script>
 
 <script type="text/x-handlebars" id="users">
   <ul>
     {{#each user in controller}}
-    <li>{{user.fullName}}</li>
+    <li>{{#link-to 'user' user}}{{user.fullName}}{{/link-to}}</li>
     {{/each}}
+  </ul>
+
+  {{outlet}}
+</script>
+
+<script type="text/x-handlebars" id="user">
+  <ul>
+    <li>{{fullName}}</li>
+    <li>{{email}}</li>
   </ul>
 </script>
 
