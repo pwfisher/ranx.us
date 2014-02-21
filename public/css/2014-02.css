@@ -1,0 +1,15 @@
+html {
+	background: #D4D4D4;
+}
+
+body {
+	background: #FFF;
+	margin: 0 auto;
+	max-width: 320px;
+}
+
+aside.login {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
