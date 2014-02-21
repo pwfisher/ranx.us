@@ -7,52 +7,57 @@
   <link rel="stylesheet" href="css/2014-02.css">
 </head>
 <body>
-  <script type="text/x-handlebars" id="application">
-    <h1>ranx.us</h1>
+<script type="text/x-handlebars" id="application">
 
-    {{outlet}}
-  </script>
+  <h1>ranx.us</h1>
+  <nav>
+    {{#link-to "index"}}Home{{/link-to}}
+    {{#link-to "users"}}Users{{/link-to}}
+    {{#link-to "ladders"}}Ladders{{/link-to}}
+  </nav>
 
-  <script type="text/x-handlebars" id="index">
+  {{outlet}}
 
-<h2>{{title}}</h2>
+  {{#if isNotLoggedIn}}
+  <aside class="login">
+    <form {{action "login" on="submit"}}>
+      <div class="email input">
+        <label>email</label>
+        {{input value=email type="text"}}
+      </div>
+      <div class="password input">
+        <label>Password</label>
+        {{input value=password type="password"}}
+      </div>
+      <button type="submit" {{bindAttr disabled="isProcessing"}}>Log in!</button>
+      {{#if error}}
+        <div class="alert">Error: {{error}}</div>
+      {{/if}}
+    </form>
+  </aside>
+  {{/if}}
 
-{{outlet}}
+</script>
 
-<aside class="login">
-  <form {{action "login" on="submit"}}>
-    <div class="email input">
-      <label>email</label>
-      {{input value=email type="text"}}
-    </div>
-    <div class="password input">
-      <label>Password</label>
-      {{input value=password type="password"}}
-    </div>
-    <button type="submit" {{bindAttr disabled="isProcessing"}}>Log in!</button>
-    {{#if error}}
-      <div class="alert">Error: {{error}}</div>
-    {{/if}}
-  </form>
-</aside>
+<script type="text/x-handlebars" id="index">
+<p>Welcome to ranx.us</p>
+</script>
 
-  </script>
+<script type="text/x-handlebars" id="ladders">
+  <ul>
+    {{#each ladder in controller}}
+    <li>{{ladder.name}}</li>
+    {{/each}}
+  </ul>
+</script>
 
-  <script type="text/x-handlebars" id="ladders">
-    <ul>
-      {{#each ladder in controller}}
-      <li>{{ladder.name}}</li>
-      {{/each}}
-    </ul>
-  </script>
-
-  <script type="text/x-handlebars" id="users">
-    <ul>
-      {{#each user in controller}}
-      <li>{{user.fullName}}</li>
-      {{/each}}
-    </ul>
-  </script>
+<script type="text/x-handlebars" id="users">
+  <ul>
+    {{#each user in controller}}
+    <li>{{user.fullName}}</li>
+    {{/each}}
+  </ul>
+</script>
 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
