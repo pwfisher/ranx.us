@@ -39,13 +39,19 @@
   </script>
 
   <script type="text/x-handlebars" id="ladders">
-
     <ul>
       {{#each ladder in controller}}
       <li>{{ladder.name}}</li>
       {{/each}}
     </ul>
+  </script>
 
+  <script type="text/x-handlebars" id="users">
+    <ul>
+      {{#each user in controller}}
+      <li>{{user.fullName}}</li>
+      {{/each}}
+    </ul>
   </script>
 
 

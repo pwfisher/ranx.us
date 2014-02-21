@@ -19,13 +19,15 @@ App.Ladder.FIXTURES = [
 App.User.FIXTURES = [
   {
     id: 1,
-    name: 'Patrick Fisher',
-    email: 'patrick@pwfisher.com'
+    email: 'patrick@pwfisher.com',
+    firstName: 'Patrick',
+    lastName: 'Fisher'
   },
   {
     id: 2,
-    name: 'Juan Caldera',
-    email: 'juan@dollarshaveclub.com'
+    email: 'juan@dollarshaveclub.com',
+    firstName: 'Juan',
+    lastName: 'Caldera'
   }
 ];
 

@@ -10,6 +10,12 @@ App = Ember.Application.create();
 App.ApplicationAdapter = DS.FixtureAdapter.extend();
 
 App.Router.map(function() {
+  this.resource('users', function () {
+    this.resource('user', { path: '/:user_id'}, function () {
+      this.route('edit');
+    });
+    this.route('create');
+  });
   this.resource('ladders', function () {
     this.resource('ladder', { path: '/:ladder_path'}, function () {
       this.route('edit');
@@ -23,8 +29,17 @@ App.Router.reopen({
 });
 
 App.User = DS.Model.extend({
-  name         : DS.attr(),
-  email        : DS.attr()
+  email: DS.attr('string'),
+  firstName: DS.attr('string'),
+  lastName: DS.attr('string'),
+  fullName: function () {
+    return this.get('firstName') + ' ' + this.get('lastName');
+  }.property('firstName', 'lastName')
+});
+
+App.UsersController = Ember.ArrayController.extend({
+  sortProperties: ['name'],
+  sortAscending: true
 });
 
 // App.IndexRoute = Ember.Route.extend({
