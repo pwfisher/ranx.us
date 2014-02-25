@@ -6,37 +6,6 @@ var App,                                            // Ember.Application
 // Create Ember application
 App = Ember.Application.create();
 
-// Configure fixture data source
-App.ApplicationAdapter = DS.FixtureAdapter.extend();
-
-App.Router.map(function() {
-  this.resource('users', function () {
-    this.resource('user', { path: '/:user_id'}, function () {
-      this.route('edit');
-    });
-    this.route('create');
-  });
-  this.resource('ladders', function () {
-    this.resource('ladder', { path: '/:path'}, function () {
-      this.route('edit');
-    });
-    this.route('create');
-  });
-});
-
-App.Router.reopen({
-  // location: 'history'
-});
-
-App.User = DS.Model.extend({
-  email: DS.attr('string'),
-  firstName: DS.attr('string'),
-  lastName: DS.attr('string'),
-  fullName: function () {
-    return this.get('firstName') + ' ' + this.get('lastName');
-  }.property('firstName', 'lastName')
-});
-
 App.UsersController = Ember.ArrayController.extend({
   sortProperties: ['name'],
   sortAscending: true
@@ -50,26 +19,6 @@ App.UsersController = Ember.ArrayController.extend({
 
 // Firebase reference
 firebase = new Firebase("https://ranx.firebaseio.com/");
-
-App.IndexRoute = Ember.Route.extend({
-  model: function() {
-    return EmberFire.Object.create({
-      ref: firebase
-    });
-  }
-});
-
-App.LaddersRoute = Ember.Route.extend({
-  model: function(){
-    return this.store.find('ladder');
-  }
-});
-
-App.UsersRoute = Ember.Route.extend({
-  model: function(){
-    return this.store.find('user');
-  }
-});
 
 App.IndexController = Ember.Controller.extend({
 
