@@ -1,0 +1,6 @@
+<ul>
+{{#each user in controller}}
+<li>{{#link-to 'user' user}}{{user.fullName}}{{/link-to}}</li>
+{{/each}}
+</ul>
+{{outlet}}

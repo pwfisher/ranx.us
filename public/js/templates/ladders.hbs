@@ -1,0 +1,6 @@
+<ul>
+  {{#each ladder in controller}}
+  <li>{{#link-to 'ladder' ladder}}{{ladder.name}}{{/link-to}}</li>
+  {{/each}}
+</ul>
+{{outlet}}

@@ -1,52 +1,14 @@
-var App,                                            // Ember.Application
-    auth,                                           // FirebaseSimpleLogin
-    controller,
-    firebase;                                       // Firebase
-
 // Create Ember application
-App = Ember.Application.create();
-
-App.UsersController = Ember.ArrayController.extend({
-  sortProperties: ['name'],
-  sortAscending: true
-});
-
-// App.IndexRoute = Ember.Route.extend({
-//   model: function() {
-//     return ['red', 'yellow', 'blue'];
-//   }
-// });
+var App = Ember.Application.create();
 
 // Firebase reference
-firebase = new Firebase("https://ranx.firebaseio.com/");
-
-App.IndexController = Ember.Controller.extend({
-
-  error: '',
-  isProcessing: false,
-
-  login: function() {
-    controller = this;
-    this.set('loginFailed', false);
-    this.set('isProcessing', true);
-
-    auth.login('password', {
-      email: this.get('email'),
-      password: this.get('password'),
-      rememberMe: true
-    });
-  }
-});
+App.firebase = new Firebase('https://ranx.firebaseio.com/');
 
 // FirebaseSimpleLogin auth
-auth = new FirebaseSimpleLogin(firebase, function (error, user)
+App.auth = new FirebaseSimpleLogin(App.firebase, function (error, user)
 {
-  // controller.set('error', '');
-  // controller.set('isProcessing', false);
-
   if (error) {
     // an error occurred while attempting login
-    // controller.set('error', error.code);
     console.log(error);
   } else if (user) {
     // user authenticated with Firebase

@@ -1,0 +1,25 @@
+<h1>ranx.us</h1>
+<nav>
+  {{#link-to "index"}}Home{{/link-to}}
+  {{#link-to "users"}}Users{{/link-to}}
+  {{#link-to "ladders"}}Ladders{{/link-to}}
+</nav>
+{{outlet}}
+{{#if isNotLoggedIn}}
+<aside class="login">
+  <form {{action "login" on="submit"}}>
+    <div class="email input">
+      <label>email</label>
+      {{input value=email type="text"}}
+    </div>
+    <div class="password input">
+      <label>Password</label>
+      {{input value=password type="password"}}
+    </div>
+    <button type="submit" {{bindAttr disabled="isProcessing"}}>Log in!</button>
+    {{#if error}}
+      <div class="alert">Error: {{error}}</div>
+    {{/if}}
+  </form>
+</aside>
+{{/if}}
