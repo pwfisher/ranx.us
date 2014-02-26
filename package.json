@@ -1,15 +1,16 @@
 {
     "name": "ranx.us",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "private": true,
     "dependencies": {
-    	"handlebars": "",
-        "node-staticp": "1.1"
+        "express": "*"
     },
     "devDependencies": {
         "grunt": "*",
         "grunt-contrib-watch": "*",
         "grunt-ember-templates": "*"
 	},
-    "engines" : { "node": ">= 0.4.1" }
+    "engines" : {
+        "node": "*"
+    }
 }
