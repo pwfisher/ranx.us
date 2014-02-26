@@ -1,16 +1,18 @@
 <h1>ranx.us</h1>
 
-<nav>
+<nav class="main-menu">
   {{#link-to "index"}}<button>Home</button>{{/link-to}}
   {{#link-to "users"}}<button>Users</button>{{/link-to}}
   {{#link-to "ladders"}}<button>Ladders</button>{{/link-to}}
 </nav>
 
 
-{{outlet}}
+<section class="main-content">
+  {{outlet}}
+</section>
 
 
-<form class="auth">
+<div class="auth-form">
   {{#if auth.currentUser }}
     <p>Logged in as {{ auth.currentUser.email }}</p>
     <button {{ action "logout" }}>Log out</button>
@@ -28,4 +30,4 @@
       <div class="alert">{{ auth.error }}</div>
     {{/if}}
   {{/if}}
-</form>
+</div>

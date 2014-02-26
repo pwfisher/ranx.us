@@ -1,6 +1,9 @@
 <ul>
-  {{#each ladder in controller}}
-  <li>{{#link-to 'ladder' ladder}}{{ladder.name}}{{/link-to}}</li>
+  {{#each ladder in controller }}
+  <li>{{#link-to 'ladder' ladder }}{{ ladder.name }}{{/link-to}}</li>
   {{/each}}
 </ul>
+
+{{#link-to "ladders.create" class="create-btn" }} Add ladder {{/link-to}}
+
 {{outlet}}
