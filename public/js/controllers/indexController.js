@@ -3,7 +3,7 @@ App.IndexController = Ember.Controller.extend({
   error: '',
   isProcessing: false,
 
-  login: function() {
+  login: function () {
     this.set('loginFailed', false);
     this.set('isProcessing', true);
 
