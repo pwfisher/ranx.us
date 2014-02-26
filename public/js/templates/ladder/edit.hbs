@@ -1,0 +1,19 @@
+<div class="ladder-edit">
+
+  <label>Choose ladder icon</label>
+  {{ input value=avatarUrl }}
+
+  <label>Name</label>
+  {{ input value=name }}
+
+  <label>Path</label>
+  {{ input value=path }}
+
+  <label>Players per game</label>
+  {{ input value=playersPerGame type="number" }}
+
+  <label>About</label>
+  {{ textarea value=about }}
+</div>
+
+<button {{action "save"}}> ok </button>

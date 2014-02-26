@@ -1,4 +1,17 @@
-<ul>
-  <li>{{name}}</li>
-  <li>{{path}}</li>
-</ul>
+<div class="ladder-summary">
+  <h2>{{name}}</h2>
+  <small>{{path}}</small>
+  <p>{{about}}</p>
+  <button {{action "edit"}}>Edit</button>
+  <button {{action "delete"}}>Delete</button>
+</div>
+
+{{#if deleteMode}}
+<div class="confirm-box">
+  <h4>Really?</h4>
+  <button {{action "confirmDelete"}}> yes </button>
+  <button {{action "cancelDelete"}}> no </button>
+</div>
+{{/if}}
+
+{{outlet}}
