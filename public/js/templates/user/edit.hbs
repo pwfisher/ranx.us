@@ -1,18 +1,20 @@
 <div class="user-edit">
-  <label>Choose user avatar</label>
-  {{input value=avatarUrl}}
 
   <label>User first name</label>
-  {{input value=firstName}}
+  {{ input value=firstName }}
 
   <label>User last name</label>
-  {{input value=lastName}}
+  {{ input value=lastName }}
 
   <label>User email</label>
-  {{input value=email}}
+  {{ input value=email }}
 
   <label>User short bio</label>
-  {{textarea value=bio}}
+  {{ textarea value=bio }}
+
+  <label>Choose user avatar</label>
+  {{ input value=avatarUrl }}
+
 </div>
 
-<button {{action "save"}}> ok </button>
+<button {{ action 'save' }}> ok </button>

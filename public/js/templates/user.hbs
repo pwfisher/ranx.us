@@ -1,19 +1,22 @@
 <div class="user-profile">
-  <img {{bind-attr src="avatarUrl"}}>
-  <h2>{{fullName}}</h2>
-  <p>{{email}}</p>
-  <p>{{bio}}</p>
-  <p>{{formatDate creationDate}}</p>
-  <button {{action "edit"}}>Edit</button>
-  <button {{action "delete"}}>Delete</button>
+
+  <img {{ bind-attr src="avatarUrl" }}>
+  <h2>{{ fullName }}</h2>
+  <p>{{ email }}</p>
+  <p>{{ bio }}</p>
+  <p>{{ formatDate dateCreated }}</p>
+
+  <button {{ action 'edit' }}>Edit</button>
+  <button {{ action 'delete' }}>Delete</button>
+
 </div>
 
-{{#if deleteMode}}
+{{#if deleteMode }}
 <div class="confirm-box">
   <h4>Really?</h4>
-  <button {{action "confirmDelete"}}> yes </button>
-  <button {{action "cancelDelete"}}> no </button>
+  <button {{ action 'confirmDelete' }}> yes </button>
+  <button {{ action 'cancelDelete' }}> no </button>
 </div>
 {{/if}}
 
-{{outlet}}
+{{ outlet }}

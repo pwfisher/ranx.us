@@ -1,13 +1,13 @@
 App.ApplicationController = Ember.Controller.extend({
 
-	actions: {
+  actions: {
 
-		login: function () {
-			this.get('auth').login();
-		},
+    login: function () {
+      this.get('auth').login();
+    },
 
-		logout: function () {
-			this.get('auth').logout();
-		}
-	}
+    logout: function () {
+      this.get('auth').logout();
+    }
+  }
 });
