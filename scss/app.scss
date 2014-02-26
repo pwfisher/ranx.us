@@ -1,53 +1,76 @@
 $darkBlue: rgb(53, 81, 99);
 $greyBlue: rgb(195, 203, 208);
-$white: #EEE;
+$white: #E4E4E4;
+$black: #111;
+$redBg: #FAA;
+$redBorder: #F55;
 
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-	background: $darkBlue;
+  background: $darkBlue;
 }
 
 body {
-	color: $white;
-	margin: 0 auto;
-	max-width: 320px;
-	padding: 25px;
-	text-align: center;
+  color: $white;
+  font-family: Verdana, sans-serif;
+  margin: 0 auto;
+  max-width: 320px;
+  padding: 25px;
+  text-align: center;
 }
 
 a {
-	color: $white;
-	text-decoration: none;
+  color: $white;
+  text-decoration: none;
 }
 
 button {
-	background: $greyBlue;
-	color: $darkBlue;
-	height: 2.5em;
-	width: 100%;
-	.active & {
-		background: $white;
-	}
+  background: $greyBlue;
+  color: $darkBlue;
+  height: 2.5em;
+  width: 100%;
+  .active & {
+    background: $white;
+  }
+}
+
+li {
+  margin: 10px 0;
+  text-align: initial;
 }
 
 .auth-form,
 .main-menu {
-	background: rgba(255, 255, 255, 0.08);
-	border-top: 1px solid rgba(255, 255, 255, 0.2);
-	padding: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px;
 }
+
 .main-content {
-	margin: 50px 0;
+  margin: 50px 0;
 }
 
 input,
 textarea {
-	color: $darkBlue;
-	margin: 5px 0;
-	padding: 3px 6px;
-	width: 100%;
+  color: $darkBlue;
+  margin: 5px 0;
+  padding: 3px 6px;
+  width: 100%;
+}
+
+.confirm-box {
+  background: $white;
+  border: 3px solid $redBorder;
+  color: $black;
+  margin: 20px 0;
+  padding: 10px;
+  button {
+    background: $redBg;
+    border-color: $redBorder;
+    color: $black;
+  }
 }

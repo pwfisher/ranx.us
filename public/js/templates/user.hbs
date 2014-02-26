@@ -1,9 +1,9 @@
 <div class="user-profile">
   <img {{bind-attr src="avatarUrl"}}>
   <h2>{{fullName}}</h2>
-  <h3>{{email}}</h3>
+  <p>{{email}}</p>
   <p>{{bio}}</p>
-  <cite>{{formatDate creationDate}}</span>
+  <p>{{formatDate creationDate}}</p>
   <button {{action "edit"}}>Edit</button>
   <button {{action "delete"}}>Delete</button>
 </div>

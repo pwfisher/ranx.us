@@ -1,9 +1,11 @@
 <ul>
-{{#each user in controller}}
-<li>{{#link-to 'user' user}}{{user.fullName}}{{/link-to}}</li>
+{{#each user in controller }}
+  <li>{{#link-to 'user' user }}{{ user.fullName }}{{/link-to}}</li>
 {{/each}}
 </ul>
 
-{{#link-to "users.create" class="create-btn"}} Add user {{/link-to}}
+{{#link-to "users.create" class="create-btn"}}
+  <button>Add user</button>
+{{/link-to}}
 
 {{outlet}}
