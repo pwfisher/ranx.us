@@ -25,8 +25,8 @@ App.AuthController = Ember.Controller.extend({
           var data = snapshot.val() || {};
           var now = new Date().toISOString();
 
-          if (!data.creationDate) {
-            properties.creationDate = now;
+          if (!data.dateCreated) {
+            properties.dateCreated = now;
           }
 
           if (!data.avatarUrl) {
@@ -34,7 +34,7 @@ App.AuthController = Ember.Controller.extend({
           }
 
           var user = EmberFire.Object.extend({}).create({ ref: userRef });
-          properties.lastLoginDate = now;
+          properties.dateVisited = now;
           user.setProperties(properties);
 
           self.set('currentUser', user);
