@@ -1,3 +1,7 @@
+// Firebase reference
+App.dbRoot = 'https://ranx.firebaseio.com/';
+App.firebase = new Firebase(App.dbRoot);
 
-// Configure fixture data source
-App.ApplicationAdapter = DS.FixtureAdapter.extend();
+App.ApplicationAdapter = DS.FirebaseAdapter.extend({
+  firebase: App.firebase
+});

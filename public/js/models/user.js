@@ -7,5 +7,6 @@ App.User = DS.Model.extend({
   fullName: function () {
     return this.get('firstName') + ' ' + this.get('lastName');
   }.property('firstName', 'lastName'),
+  lastLoginDate: DS.attr('string'),
   lastName: DS.attr('string')
 });

@@ -2,7 +2,7 @@ App.UsersCreateController = Ember.ObjectController.extend({
   actions: {
     save: function () {
       // set creationDate
-      this.get('model').set('creationDate', new Date());
+      this.get('model').set('creationDate', new Date().toISOString());
 
       // create a record and save it to the store
       var newUser = this.store.createRecord('user', this.get('model'));
