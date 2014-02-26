@@ -1,0 +1,11 @@
+<ul>
+  {{#each game in controller }}
+  <li>{{ formatDate game.dateCreated }}{{/link-to}}</li>
+  {{/each}}
+</ul>
+
+{{#link-to 'game.create' }}
+  <button>New game</button>
+{{/link-to}}
+
+{{ outlet }}

@@ -2,7 +2,7 @@ $darkBlue: rgb(53, 81, 99);
 $greyBlue: rgb(195, 203, 208);
 $white: #E4E4E4;
 $black: #111;
-$redBg: #FAA;
+$redBg: #FEE;
 $redBorder: #F55;
 
 
@@ -63,13 +63,13 @@ textarea {
 }
 
 .confirm-box {
-  background: $white;
+  background: $redBg;
   border: 3px solid $redBorder;
   color: $black;
   margin: 20px 0;
   padding: 10px;
   button {
-    background: $redBg;
+    background: mix($redBorder, $redBg, 30%);
     border-color: $redBorder;
     color: $black;
   }

@@ -1,4 +1,4 @@
-App.UsersCreateRoute = Ember.Route.extend({
+App.GamesCreateRoute = Ember.Route.extend({
 
   model: function () {
     return Em.Map.create({});
@@ -6,8 +6,8 @@ App.UsersCreateRoute = Ember.Route.extend({
 
   // reuse the user/edit template
   renderTemplate: function () {
-    this.render('user.edit', {
-      controller: 'usersCreate'
+    this.render('game.edit', {
+      controller: 'gamesCreate'
     });
   }
 });
