@@ -1,16 +1,17 @@
 {
-    "name": "ranx.us",
-    "version": "1.0.0",
-    "private": true,
-    "dependencies": {
-        "express": "*"
-    },
-    "devDependencies": {
-        "grunt": "*",
-        "grunt-contrib-watch": "*",
-        "grunt-ember-templates": "*"
-	},
-    "engines" : {
-        "node": "*"
-    }
+  "name": "ranx.us",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "express": "*"
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-ember-templates": "*",
+    "grunt-contrib-sass": "~0.7.2"
+  },
+  "engines": {
+    "node": "*"
+  }
 }

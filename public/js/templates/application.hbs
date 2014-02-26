@@ -1,12 +1,14 @@
 <h1>ranx.us</h1>
 
 <nav>
-  {{#link-to "index"}}Home{{/link-to}}
-  {{#link-to "users"}}Users{{/link-to}}
-  {{#link-to "ladders"}}Ladders{{/link-to}}
+  {{#link-to "index"}}<button>Home</button>{{/link-to}}
+  {{#link-to "users"}}<button>Users</button>{{/link-to}}
+  {{#link-to "ladders"}}<button>Ladders</button>{{/link-to}}
 </nav>
 
+
 {{outlet}}
+
 
 <form class="auth">
   {{#if auth.currentUser }}

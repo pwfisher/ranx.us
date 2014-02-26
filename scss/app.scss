@@ -1,0 +1,32 @@
+$darkBlue: rgb(53, 81, 99);
+$greyBlue: rgb(195, 203, 208);
+$white: #EEE;
+
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	background: $darkBlue;
+}
+
+body {
+	color: $white;
+	margin: 0 auto;
+	max-width: 320px;
+	padding: 25px;
+	text-align: center;
+}
+
+a {
+	color: $white;
+	text-decoration: none;
+}
+
+button {
+	background: $greyBlue;
+	color: $darkBlue;
+	height: 2.5em;
+	width: 100%;
+}
